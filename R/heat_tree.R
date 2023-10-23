@@ -1158,7 +1158,7 @@ heat_tree.default <- function(taxon_id, supertaxon_id,
     
     ranges <- get_limits()
     the_plot <- ggplot2::ggplot(data = data) +
-      ggiraph::geom_polygon_interactive(data = element_data, ggplot2::aes_string(x = "x", y = "y", group = "group"),
+      ggiraph::geom_polygon_interactive(data = element_data, ggplot2::aes_string(x = "x", y = "y", group = "group",tooltip = "group"),
                                         fill = element_data$color) +
       ggplot2::guides(fill = "none") +
       ggplot2::coord_fixed(xlim = ranges$x, ylim = ranges$y) +
