@@ -1158,7 +1158,7 @@ heat_tree.default <- function(taxon_id, supertaxon_id,
     
     ranges <- get_limits()
     the_plot <- data %>%
-      mutate(tooltip=ifelse(grepl("node",group),label,NA)) %>%
+      mutate(tooltip=ifelse(grepl("_node$",group),label,NA)) %>%
       ggplot2::ggplot() +
       ggiraph::geom_polygon_interactive(data = element_data, ggplot2::aes_string(x = "x", y = "y", group = "group",tooltip = "tooltip"),
                                         fill = element_data$color) +
